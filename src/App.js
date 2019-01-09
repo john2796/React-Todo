@@ -35,7 +35,7 @@ class App extends React.Component {
           submitHandler={this.submitHandler}
           onChangeHandler={this.onChangeHandler}
         />
-        <p>TEST</p>
+        <p>anotehre test</p>
       </div>
     );
   }
