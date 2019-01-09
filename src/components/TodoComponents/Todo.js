@@ -1,5 +1,4 @@
 import React from "react";
 
-const Todo = props => <p>todo list</p>;
-
+const Todo = ({ item }) => <li>{item.text}</li>;
 export default Todo;

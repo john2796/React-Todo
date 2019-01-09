@@ -2,12 +2,14 @@ import React from "react";
 import TodoForm from "./components/TodoComponents/TodoForm";
 import TodoList from "./components/TodoComponents/TodoList";
 
+const dataList = [{ text: "Apple" }, { text: "Banana" }, { text: "Orange" }];
+
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      data: [],
+      data: dataList,
       inputText: ""
     };
   }
@@ -19,22 +21,29 @@ class App extends React.Component {
   submitHandler = e => {
     e.preventDefault();
     this.setState({
-      ...this.state.data,
-      data: [{ text: this.state.inputText }]
+      data: [
+        ...this.state.data,
+        {
+          text: this.state.inputText
+        }
+      ],
+      inputText: ""
     });
   };
 
+  strikeThroughHandler = id => {};
+
   render() {
     const { data, inputText } = this.state;
-
     return (
       <div>
-        <TodoList data={data} />
         <TodoForm
           inputText={inputText}
           submitHandler={this.submitHandler}
           onChangeHandler={this.onChangeHandler}
+          strikeThroughHandler={this.strikeThroughHandler}
         />
+        <TodoList data={data} />
         <p>anotehre test</p>
       </div>
     );
