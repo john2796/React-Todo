@@ -28,7 +28,7 @@ class App extends React.Component {
         ...this.state.data,
         {
           text: this.state.inputText,
-          id: Math.floor(Math.random() * 2000),
+          id: Math.floor(Math.random() * 8000),
           completed: false
         }
       ],
@@ -41,12 +41,21 @@ class App extends React.Component {
     data = data.map(todo => {
       if (todo.id === id) {
         todo.completed = !todo.completed;
+        console.log(todo);
         return todo;
       } else {
         return todo;
       }
     });
     this.setState({ data });
+  };
+
+  selectAll = () => {
+    let data = [...this.state.data];
+    data = data.map(todo => {
+      return (todo.completed = true);
+    });
+    this.setState(data);
   };
 
   deleteTodo = () => {
@@ -65,6 +74,7 @@ class App extends React.Component {
           submitHandler={this.submitHandler}
           onChangeHandler={this.onChangeHandler}
           deleteTodo={this.deleteTodo}
+          selectAll={this.selectAll}
         />
         <TodoList
           data={data}

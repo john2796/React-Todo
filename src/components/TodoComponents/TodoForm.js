@@ -4,7 +4,8 @@ const TodoForm = ({
   inputText,
   submitHandler,
   onChangeHandler,
-  deleteTodo
+  deleteTodo,
+  selectAll
 }) => (
   <React.Fragment>
     <div
@@ -23,6 +24,7 @@ const TodoForm = ({
         <button type="submit">Add Todo</button>
       </form>
       <button onClick={deleteTodo}>Clear Completed</button>
+      <button onClick={selectAll}>Clear Completed</button>
     </div>
   </React.Fragment>
 );
