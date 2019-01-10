@@ -52,9 +52,7 @@ class App extends React.Component {
 
   selectAll = () => {
     let data = [...this.state.data];
-    data = data.map(todo => {
-      return (todo.completed = true);
-    });
+    data = data.map(todo => (todo.completed = !todo.completed));
     this.setState(data);
   };
 
