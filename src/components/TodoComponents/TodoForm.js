@@ -1,6 +1,11 @@
 import React from "react";
 
-const TodoForm = ({ inputText, submitHandler, onChangeHandler }) => (
+const TodoForm = ({
+  inputText,
+  submitHandler,
+  onChangeHandler,
+  deleteTodo
+}) => (
   <React.Fragment>
     <div
       className="container"
@@ -17,7 +22,7 @@ const TodoForm = ({ inputText, submitHandler, onChangeHandler }) => (
         />
         <button type="submit">Add Todo</button>
       </form>
-      <button>Clear Completed</button>
+      <button onClick={deleteTodo}>Clear Completed</button>
     </div>
   </React.Fragment>
 );
