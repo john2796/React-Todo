@@ -4,7 +4,7 @@ const Todo = ({ item, strikeThroughHandler, completed }) => (
   <li
     style={
       completed
-        ? { textDecoration: "line-through", color: "red" }
+        ? { textDecoration: "line-through", color: "gray" }
         : { color: "black" }
     }
     onClick={strikeThroughHandler}

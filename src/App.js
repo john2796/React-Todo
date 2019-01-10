@@ -37,8 +37,8 @@ class App extends React.Component {
   };
 
   strikeThroughHandler = id => {
-    let datas = this.state.data.slice();
-    datas = datas.map(todo => {
+    let data = [...this.state.data];
+    data = data.map(todo => {
       if (todo.id === id) {
         todo.completed = !todo.completed;
         return todo;
@@ -46,7 +46,7 @@ class App extends React.Component {
         return todo;
       }
     });
-    this.setState({ datas });
+    this.setState({ data });
   };
 
   deleteTodo = () => {
